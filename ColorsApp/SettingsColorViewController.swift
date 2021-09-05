@@ -21,13 +21,17 @@ class SettingsColorViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    var color: UIColor!
+    var delegate: SettingsViewControllerDelegate!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setColor()
-        
         setValue(for: redLabel, greenLabel, blueLabel)
-        
+        color = colorView.backgroundColor ?? .red
     }
+     
     @IBAction func rgbSlider(_ sender: UISlider) {
         setColor()
         switch sender {
@@ -38,7 +42,13 @@ class SettingsColorViewController: UIViewController {
         default:
             blueLabel.text = string(from: blueSlider)
         }
-        
+    }
+    
+    @IBAction func doneAction() {
+        view.endEditing(true)
+        delegate.setMainColor(with: color ?? .red)
+        dismiss(animated: true)
+        print("JKBHAXKH")
     }
     
     private func setColor(){

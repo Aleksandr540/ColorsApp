@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="ryO-8G-0QO">
             <objects>
-                <viewController id="IhP-0H-Fxt" sceneMemberID="viewController">
+                <viewController id="IhP-0H-Fxt" customClass="FirstViewController" customModule="ColorsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D8G-wW-SOz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="86.956521739130437" y="101.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Color View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColorsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SettingsColorViewController" customModule="ColorsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,12 +141,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVj-SC-hP9">
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVj-SC-hP9">
                                         <rect key="frame" x="0.0" y="92" width="55" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="aWp-k9-ofL" firstAttribute="height" secondItem="jyN-QL-cA9" secondAttribute="height" id="N5d-yJ-SEP"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBD-i4-8FO">
                                 <rect key="frame" x="165.5" y="787" width="83" height="55"/>
@@ -154,6 +157,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="tGy-BR-Zra"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29148462679999998" green="0.54145734710000004" blue="0.71658650619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -176,7 +182,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="blueLabel" destination="MCp-t0-MQk" id="4gk-kg-lKx"/>
+                        <outlet property="blueLabel" destination="MCp-t0-MQk" id="k4s-Ds-GO5"/>
                         <outlet property="blueSlider" destination="eu3-HS-GTm" id="eex-vm-eQr"/>
                         <outlet property="colorView" destination="Qqe-Pd-Ejt" id="TEf-p8-8Cd"/>
                         <outlet property="greenLabel" destination="fe4-gO-JKg" id="BY1-fX-DHN"/>
